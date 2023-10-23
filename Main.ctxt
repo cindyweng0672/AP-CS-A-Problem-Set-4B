@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Main
+comment1.params=
+comment1.target=void\ Main()
+comment2.params=str
+comment2.target=boolean\ palindrome(java.lang.String)
+comment3.params=str
+comment3.target=java.lang.String\ pigLatin(java.lang.String)
+comment4.params=start\ end
+comment4.target=int\ strictlyAscending(int,\ int)
+comment5.params=n
+comment5.target=boolean\ isStrictlyAscending(int)
+numComments=6
