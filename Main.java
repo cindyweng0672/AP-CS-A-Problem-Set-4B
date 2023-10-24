@@ -12,16 +12,22 @@ public class Main
     public static void Main()
     {
         Scanner sc=new Scanner(System.in);
-        /*String pan=sc.nextLine();
+        System.out.println("palindrom solver: enter a string");
+        String pan=sc.nextLine();
         System.out.println("is it a palindrom? "+palindrome(pan));
-         */
-        /*String pigcode=sc.nextLine();
+
+        System.out.println("pig latin coder: enter a string");
+        String pigcode=sc.nextLine();
         System.out.println("What is "+pigcode+" in Pig Latin? "+pigLatin(pigcode));
-        */
+
         System.out.println("StriclyAscending: Please enter a start number an end number on the same line with a space in between.");
         String sa=sc.nextLine();
         String[] nums=sa.split(" ");
         System.out.println("Number of Strictly Ascending Numbers: "+strictlyAscending(Integer.valueOf(nums[0]), Integer.valueOf(nums[1])));
+
+        System.out.println("Enter the number for your time table: ");
+        int n=Integer.valueOf(sc.nextLine());
+        timeTables(n);
     }
 
     public static boolean palindrome(String str)
@@ -71,24 +77,40 @@ public class Main
     }
 
     public static boolean isStrictlyAscending(int n){
-        int digN=0;
+        int digN=1;
         int num=n;
-        while (num != 0) {
+        while (num >= 10) {
             num /= 10;
             digN++;
         }
-        
+
         int prevDig=n%10;
         n/=10;
-        for(int i=0; i<digN; i++){
-            if(n%10<=prevDig){
+
+        for(int i=0; i<digN-1; i++){
+            if(n%10>=prevDig){
                 return false;
             }
             prevDig=n%10;
             n/=10;
-        }
-        
+        }   
+
         return true;
+    }
+
+    public static void timeTables(int n){
+        int[] arr=new int[n];
+
+        for(int i=0; i<n; i++){
+            arr[i]=i+1;
+        }
+
+        for(int r=0; r<n; r++){
+            for(int c=0; c<n; c++){
+                System.out.print(arr[c]*(r+1)+" ");
+            }
+            System.out.println();
+        }
     }
 
 }
